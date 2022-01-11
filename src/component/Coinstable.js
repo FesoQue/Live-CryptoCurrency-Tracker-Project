@@ -151,7 +151,7 @@ const Coinstable = () => {
                           className={classes.tableCell1}
                           component='th'
                           scope='row'
-                          styles={{ display: 'flex', gap: 15 }}
+                          styles={{ display: 'flex', marginRight: '18px' }}
                         >
                           <img
                             src={row?.image}

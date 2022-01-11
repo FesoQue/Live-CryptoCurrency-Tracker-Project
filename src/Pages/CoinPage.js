@@ -57,14 +57,6 @@ const CoinPage = () => {
       alignItems: 'flex-start',
       marginTop: 25,
     },
-    // header: {
-    //   [theme.breakpoints.up('md')]: {
-    // width: '100%',
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     alignItems: 'center',
-    //   },
-    // },
     marketData: {
       width: '100%',
       display: 'flex',
@@ -104,25 +96,23 @@ const CoinPage = () => {
       <div className={classes.container}>
         <div className={classes.sidebar} id='sidebar'>
           {/* coin logo/symbol */}
-          <div className={classes.header}>
-            <img
-              src={coin?.image.large}
-              alt={coin?.name}
-              height='80'
-              style={{ marginBottom: 20 }}
-            />
-            {/* coin name */}
-            <Typography
-              variant='h6'
-              style={{
-                fontFamily: 'Montserrat',
-                fontWeight: 700,
-                marginBottom: 20,
-              }}
-            >
-              {coin?.name}
-            </Typography>
-          </div>
+          <img
+            src={coin?.image.large}
+            alt={coin?.name}
+            height='80'
+            style={{ marginBottom: 20 }}
+          />
+          {/* coin name */}
+          <Typography
+            variant='h6'
+            style={{
+              fontFamily: 'Montserrat',
+              fontWeight: 700,
+              marginBottom: 20,
+            }}
+          >
+            {coin?.name}
+          </Typography>
 
           {/* coin desc */}
           <Typography
