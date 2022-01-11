@@ -80,7 +80,8 @@ const Carousel = () => {
             className='current-price'
             style={{ fontSize: 18, fontWeight: 500, color: '#fff' }}
           >
-            {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
+            {symbol}
+            {numberWithCommas(coin?.current_price.toFixed(2))}
           </span>
         </div>
       </Link>
