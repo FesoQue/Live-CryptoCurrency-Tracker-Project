@@ -32,6 +32,7 @@ const Banner = () => {
               fontFamily: 'Montserrat',
               fontWeight: 'bold',
               marginBottom: 15,
+              fontSize: 45,
             }}
             id='bannerHeading'
           >
