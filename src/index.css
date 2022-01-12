@@ -161,6 +161,28 @@ p {
 .chartBtn.active {
   font-weight: 700;
 }
+.errorImg {
+  width: 50%;
+  margin: 0 auto;
+}
+.errorImg img {
+  width: 250px;
+  margin: 0 auto;
+  animation-name: bounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @media screen and (min-width: 800px) {
   #carouselCoins {
     margin-left: 45%;

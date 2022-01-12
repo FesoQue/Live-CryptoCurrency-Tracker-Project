@@ -133,84 +133,105 @@ const Coinstable = () => {
                 </TableRow>
               </TableHead>
 
-              {/* tableBody */}
               <TableBody>
-                {handleSearch()
-                  .slice((pagination - 1) * 10, (pagination - 1) * 10 + 10)
-                  .map((row, index) => {
-                    const profit = row.price_change_percentage_24h > 0;
+                {/* ERROR */}
+                {handleSearch().length === 0 ? (
+                  <TableRow>
+                    <TableCell
+                      colSpan={4}
+                      align='center'
+                      style={{ width: '100%' }}
+                    >
+                      <div className='errorImg'>
+                        <img src={'/error.png'} alt='error' />
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ) : (
+                  <>
+                    {handleSearch()
+                      .slice((pagination - 1) * 10, (pagination - 1) * 10 + 10)
+                      .map((row, index) => {
+                        const profit = row.price_change_percentage_24h > 0;
 
-                    return (
-                      <TableRow
-                        className={classes.row}
-                        key={index}
-                        onClick={() => history.push(`/coins/${row.id}`)}
-                      >
-                        {/* coin */}
-                        <TableCell
-                          className={classes.tableCell1}
-                          component='th'
-                          scope='row'
-                          styles={{ display: 'flex', marginRight: '18px' }}
-                        >
-                          <img
-                            src={row?.image}
-                            alt={row.name}
-                            height='40'
-                            style={{ marginBottom: 10 }}
-                          />
-                          <div
-                            style={{ display: 'flex', flexDirection: 'column' }}
+                        return (
+                          <TableRow
+                            className={classes.row}
+                            key={index}
+                            onClick={() => history.push(`/coins/${row.id}`)}
                           >
-                            <span
-                              style={{
-                                textTransform: 'uppercase',
-                                fontSize: 17,
-                              }}
+                            {/* coin */}
+                            <TableCell
+                              className={classes.tableCell1}
+                              component='th'
+                              scope='row'
+                              styles={{ display: 'flex', marginRight: '18px' }}
                             >
-                              {row.symbol}
-                            </span>
-                            <span style={{ color: 'darkgrey', fontSize: 15 }}>
-                              {row.name}
-                            </span>
-                          </div>
-                        </TableCell>
-                        {/* price */}
-                        <TableCell
-                          className='current-price'
-                          style={{
-                            fontSize: 15,
-                            fontWeight: 500,
-                            color: '#fff',
-                          }}
-                          align='right'
-                        >
-                          {symbol}
-                          {numberWithCommas(row?.current_price.toFixed(2))}
-                        </TableCell>
-                        {/* 24h change */}
-                        <TableCell
-                          style={{
-                            color: profit > 0 ? '#0c9b0c' : 'red',
-                            fontSize: 15,
-                            fontWeight: 500,
-                          }}
-                          align='right'
-                        >
-                          {profit && '+'}
-                          {row.price_change_percentage_24h.toFixed(2)}%
-                        </TableCell>
-                        {/* market cap */}
-                        <TableCell style={{ fontSize: 15 }} align='right'>
-                          {symbol}
-                          {numberWithCommas(
-                            row.market_cap.toString().slice(0, -6)
-                          )}
-                          M
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
+                              <img
+                                src={row?.image}
+                                alt={row.name}
+                                height='40'
+                                style={{ marginBottom: 10 }}
+                              />
+                              <div
+                                style={{
+                                  display: 'flex',
+                                  flexDirection: 'column',
+                                }}
+                              >
+                                <span
+                                  style={{
+                                    textTransform: 'uppercase',
+                                    fontSize: 17,
+                                  }}
+                                >
+                                  {row.symbol}
+                                </span>
+                                <span
+                                  style={{ color: 'darkgrey', fontSize: 15 }}
+                                >
+                                  {row.name}
+                                </span>
+                              </div>
+                            </TableCell>
+                            {/* price */}
+                            <TableCell
+                              className='current-price'
+                              style={{
+                                fontSize: 15,
+                                fontWeight: 500,
+                                color: '#fff',
+                              }}
+                              align='right'
+                            >
+                              {symbol}
+                              {numberWithCommas(row?.current_price.toFixed(2))}
+                            </TableCell>
+                            {/* 24h change */}
+                            <TableCell
+                              style={{
+                                color: profit > 0 ? '#0c9b0c' : 'red',
+                                fontSize: 15,
+                                fontWeight: 500,
+                              }}
+                              align='right'
+                            >
+                              {profit && '+'}
+                              {row.price_change_percentage_24h.toFixed(2)}%
+                            </TableCell>
+                            {/* market cap */}
+                            <TableCell style={{ fontSize: 15 }} align='right'>
+                              {symbol}
+                              {numberWithCommas(
+                                row.market_cap.toString().slice(0, -6)
+                              )}
+                              M
+                            </TableCell>
+                          </TableRow>
+                        );
+                      })}
+                  </>
+                )}
               </TableBody>
             </Table>
           )}
