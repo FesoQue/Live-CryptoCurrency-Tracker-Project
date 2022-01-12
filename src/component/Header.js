@@ -50,7 +50,7 @@ const Header = () => {
               variant='h6'
               id='logoText'
             >
-              CryptoVerse
+              CoinsVerse
             </Typography>
             <Select
               variant='outlined'
@@ -62,8 +62,8 @@ const Header = () => {
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
             >
-              <MenuItem value='USD'>USD </MenuItem>
               <MenuItem value='NGN'>NGN </MenuItem>
+              <MenuItem value='USD'>USD </MenuItem>
             </Select>
           </Toolbar>
         </Container>
