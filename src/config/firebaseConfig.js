@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyAvJSkNkIKLg0UZilqztv6Nz60C8SyGtgM',
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: 'coinsverse-crypto-tracker.firebaseapp.com',
   projectId: 'coinsverse-crypto-tracker',
   storageBucket: 'coinsverse-crypto-tracker.appspot.com',
