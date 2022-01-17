@@ -58,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#ff8a71',
+    backgroundColor: '#f8f6f6',
+    marginBottom: 10,
   },
 }));
 
@@ -123,7 +124,6 @@ function UserSidebar() {
       });
     }
   };
-
   return (
     <div>
       {['right'].map((anchor) => (
@@ -161,37 +161,49 @@ function UserSidebar() {
                     fontWeight: 600,
                     wordWrap: 'break-word',
                     color: '#81afdd',
+                    margin: '15px 0',
                   }}
                 >
                   {user.displayName || user.email}
                 </span>
                 <div className={classes.watchlist}>
                   <span
-                    style={{ fontSize: 18, color: '#fff', fontWeight: 600 }}
+                    style={{
+                      fontSize: 18,
+                      color: '#f8f6f6',
+                      fontWeight: 600,
+                      marginBottom: 15,
+                    }}
                   >
-                    Watchlist
+                    <span
+                      style={{ textDecoration: 'underline', color: '#ff8a71' }}
+                      className='aaa'
+                    >
+                      {watchlist.length} coin(s)
+                    </span>{' '}
+                    in Watchlist
                   </span>
-                  {coinsList.map((coin) => {
+                  {coinsList.map((coin, idx) => {
                     if (watchlist.includes(coin.id)) {
                       return (
                         <div className={classes.coin} key={coin.id}>
-                          <span style={{ fontWeight: 600, fontSize: '14px' }}>
-                            {coin.name}
-                          </span>
+                          {/* <span style={{ flexShrink: 1 }}>
+                            {watchlist.length}
+                          </span> */}
+                          <img src={coin.image} alt={coin.name} width='25px' />
                           <span
                             style={{
-                              display: 'flex',
-                              gap: 8,
                               fontSize: '14px',
+                              fontWeight: 600,
                             }}
                           >
                             {symbol}
                             {numberWithCommas(coin.current_price.toFixed(2))}
-                            <AiFillDelete
-                              style={{ cursor: 'pointer', fontSize: '16' }}
-                              onClick={() => removeFromWatchlist(coin)}
-                            />
                           </span>
+                          <AiFillDelete
+                            style={{ cursor: 'pointer', fontSize: '16' }}
+                            onClick={() => removeFromWatchlist(coin)}
+                          />
                         </div>
                       );
                     }

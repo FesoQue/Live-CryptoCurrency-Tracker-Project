@@ -8,6 +8,7 @@
 }
 :root {
   --pry-clr: #fff;
+  --pry-clr: #f8f6f6;
   --sec-clr: #81afdd;
   --neutral-clr: #ff8a71;
   --bg-btn: #fa613e;
@@ -62,12 +63,12 @@ h6 {
 p {
   font-size: 14px;
 }
-/* #logoText {
+.aaa {
   background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-} */
+}
 #nav {
   display: flex;
   padding: 20px 0 !important;
@@ -97,7 +98,7 @@ p {
   font-style: italic;
 }
 .loginBtn {
-  background-color: var(--bg-btn) !important;
+  background-color: #ff8a71 !important;
 }
 .banner {
   background: -moz-linear-gradient(
