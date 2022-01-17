@@ -46,12 +46,10 @@ const Signup = ({ handleClose }) => {
   };
 
   return (
-    <Box
-      p={3}
-      style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-    >
+    <Box p={3} style={{ display: 'flex', flexDirection: 'column' }}>
       {/* email */}
       <TextField
+        style={{ marginBottom: '20px' }}
         variant='outlined'
         type='email'
         label='Enter Email'
@@ -61,6 +59,7 @@ const Signup = ({ handleClose }) => {
       />
       {/* password */}
       <TextField
+        style={{ marginBottom: '20px' }}
         variant='outlined'
         type='password'
         label='Enter Password'
@@ -70,6 +69,7 @@ const Signup = ({ handleClose }) => {
       />
       {/* confirm password */}
       <TextField
+        style={{ marginBottom: '20px' }}
         variant='outlined'
         type='password'
         label='Confirm Password'

@@ -47,10 +47,9 @@ const Header = () => {
       <AppBar color='transparent' position='static'>
         <Container>
           <Toolbar id='nav'>
-            <div className='logo'>
+            <div className='logo' onClick={() => history.push('/')}>
               <img src='/coinsverse.png' alt='' className='logoImg' />
               <Typography
-                onClick={() => history.push('/')}
                 className={classes.logoTitle}
                 // variant='h6'
                 id='logoText'

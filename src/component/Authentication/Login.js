@@ -41,12 +41,10 @@ const Login = ({ handleClose }) => {
   };
 
   return (
-    <Box
-      p={3}
-      style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-    >
+    <Box p={3} style={{ display: 'flex', flexDirection: 'column' }}>
       {/* email */}
       <TextField
+        style={{ marginBottom: '20px' }}
         variant='outlined'
         type='email'
         label='Enter Email'
@@ -56,6 +54,7 @@ const Login = ({ handleClose }) => {
       />
       {/* password */}
       <TextField
+        style={{ marginBottom: '20px' }}
         variant='outlined'
         type='password'
         label='Enter Password'

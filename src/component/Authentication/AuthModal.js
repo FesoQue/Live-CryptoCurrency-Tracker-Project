@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
-    gap: 20,
     fontSize: 16,
   },
 }));
@@ -115,7 +114,7 @@ export default function AuthModal() {
             {value === 1 && <Signup handleClose={handleClose} />}
             {/* ggogle */}
             <Box className={classes.google}>
-              <span>OR</span>
+              <span style={{ marginBottom: '20px' }}>OR</span>
               <GoogleButton
                 style={{ width: '100%', outline: 'none' }}
                 onClick={signInWithGoogle}

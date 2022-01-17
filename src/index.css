@@ -78,6 +78,7 @@ p {
   flex: 1;
   margin-left: -10px;
   padding-right: 15px;
+  cursor: pointer;
 }
 #nav {
   display: flex;
@@ -88,6 +89,7 @@ p {
   width: 60px;
 }
 #logoText {
+  font-size: 22px;
   margin-left: -5px;
 }
 #logoText span {
@@ -95,7 +97,7 @@ p {
   font-style: italic;
 }
 .loginBtn {
-  background-color: var(--neutral-clr) !important;
+  background-color: var(--bg-btn) !important;
 }
 .banner {
   background: -moz-linear-gradient(
@@ -219,7 +221,7 @@ p {
   max-width: 500px;
   margin: 0 auto;
 }
-.PrivateTabIndicator-colorSecondary-73 {
+.PrivateTabIndicator-colorSecondary-77 {
   background: linear-gradient(to right, #81afdd 25%, #ae67fa 100%) !important;
 }
 #userPic {
