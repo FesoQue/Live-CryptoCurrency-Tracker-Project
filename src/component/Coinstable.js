@@ -21,25 +21,16 @@ import { makeStyles } from '@material-ui/styles';
 import { Pagination } from '@material-ui/lab';
 
 const Coinstable = () => {
-  const { currency } = useCryptoContext();
-  const [coinsList, setCoinsList] = useState([]);
+  const { symbol, currency, loading, coinsList, fetchCoins } =
+    useCryptoContext();
+
   const [search, setSearch] = useState('');
-  const [loading, setLoading] = useState(false);
   const [pagination, setPagination] = useState(1);
   const history = useHistory();
-
-  const { symbol } = useCryptoContext();
 
   // format currency with comma
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
-  const fetchCoins = async () => {
-    setLoading(true);
-    const { data } = await axios.get(CoinList(currency));
-    setCoinsList(data);
-    setLoading(false);
   };
 
   useEffect(() => {

@@ -12,6 +12,8 @@ import {
 import { makeStyles } from '@material-ui/styles';
 import { useHistory } from 'react-router-dom';
 import { useCryptoContext } from '../CryptoContext';
+import AuthModal from './Authentication/AuthModal';
+import UserSidebar from './Authentication/UserSidebar';
 
 const useStyles = makeStyles(() => ({
   logoTitle: {
@@ -20,6 +22,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: 'Montserrat',
     fontWeight: 'bold',
     cursor: 'pointer',
+    lineHeight: 1.1,
   },
 }));
 const Header = () => {
@@ -37,21 +40,27 @@ const Header = () => {
   });
 
   // state values from the context
-  const { currency, setCurrency } = useCryptoContext();
+  const { currency, setCurrency, user } = useCryptoContext();
 
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar color='transparent' position='static'>
         <Container>
-          <Toolbar id='rmv'>
-            <Typography
-              onClick={() => history.push('/')}
-              className={classes.logoTitle}
-              variant='h6'
-              id='logoText'
-            >
-              CoinsVerse
-            </Typography>
+          <Toolbar id='nav'>
+            <div className='logo'>
+              <img src='/coinsverse.png' alt='' className='logoImg' />
+              <Typography
+                onClick={() => history.push('/')}
+                className={classes.logoTitle}
+                // variant='h6'
+                id='logoText'
+              >
+                Co<span>i</span>ns
+                <br />
+                Verse
+              </Typography>
+            </div>
+
             <Select
               variant='outlined'
               style={{
@@ -65,6 +74,9 @@ const Header = () => {
               <MenuItem value='NGN'>NGN </MenuItem>
               <MenuItem value='USD'>USD </MenuItem>
             </Select>
+
+            {/* auth modal */}
+            {user ? <UserSidebar /> : <AuthModal />}
           </Toolbar>
         </Container>
       </AppBar>

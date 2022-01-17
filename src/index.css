@@ -10,8 +10,10 @@
   --pry-clr: #fff;
   --sec-clr: #81afdd;
   --neutral-clr: #ff8a71;
+  --bg-btn: #fa613e;
   --clr: #ae67fa;
   --bg: #040c18;
+  --bg-modal: #142236;
   --bg-gradient: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
   --font-family: 'Manrope', sans-serif;
 }
@@ -46,7 +48,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: var(--neutral-clr);
+  color: var(--bg-btn);
 }
 h1,
 h2,
@@ -66,6 +68,35 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 } */
+#nav {
+  display: flex;
+  padding: 20px 0 !important;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: -10px;
+  padding-right: 15px;
+}
+#nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.logoImg {
+  width: 60px;
+}
+#logoText {
+  margin-left: -5px;
+}
+#logoText span {
+  color: #ae67fa;
+  font-style: italic;
+}
+.loginBtn {
+  background-color: var(--neutral-clr) !important;
+}
 .banner {
   background: -moz-linear-gradient(
     to bottom,
@@ -93,7 +124,7 @@ p {
   );
   background: linear-gradient(
     to bottom,
-    #040c18 -4%,
+    #040c18 0%,
     rgba(0, 40, 83, 1) 25%,
     rgba(4, 12, 24, 1) 100%
   );
@@ -108,9 +139,6 @@ p {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-#rmv {
-  padding: 0;
 }
 #carouselCoins {
   display: flex;
@@ -183,7 +211,30 @@ p {
     transform: scale(1);
   }
 }
+#modal {
+  width: 100%;
+}
+#tabsWrapper {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.PrivateTabIndicator-colorSecondary-73 {
+  background: linear-gradient(to right, #81afdd 25%, #ae67fa 100%) !important;
+}
+#userPic {
+  background: radial-gradient(#ae67fa, #81afdd);
+}
 @media screen and (min-width: 800px) {
+  br {
+    display: none;
+  }
+  .logoImg {
+    width: 70px;
+  }
+  #logoText {
+    font-size: 25px;
+  }
   #carouselCoins {
     margin-left: 45%;
     text-align: center;
